@@ -1,15 +1,25 @@
 ## CAN BUS IDS SIMULATOR
 
 Simulira omrežje CAN Bus, napade na omrežje ter delovanje časovnega in entropijskega IDS.
+### Sistemske odvisnosti
 
-### Potrebni moduli
+Program zahteva Python 3 in Tkinter.
 
 ```bash
-pip install python-tk
-pip install python-can
+sudo apt install python3-tk
 ```
 
-### Zagon
+### Python odvisnosti
+
+Priporočena je uporaba virtualnega okolja:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Nastavitev virtualnega CAN vmesnika
 
 Za delovanje je potreben virtualni CAN vmesnik `vcan0` v OS Linux.
 
@@ -37,7 +47,7 @@ Preverjanje delovanja:
   ip link show vcan0
   ```
 
-Zagon programa:
+Zagon:
 
   ```bash
   python main.py
