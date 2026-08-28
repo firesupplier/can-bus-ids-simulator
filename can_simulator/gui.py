@@ -19,7 +19,7 @@ class SimulatorGUI:
 
         self.root = tk.Tk()
         self.root.title("Simulator CAN Bus IDS")
-        self.root.geometry("360x630")
+        self.root.geometry("360x610")
         self.root.resizable(False, False)
 
         title_label = tk.Label(
@@ -123,12 +123,6 @@ class SimulatorGUI:
             value="entropy",
         ).pack(anchor="w")
 
-        tk.Radiobutton(
-            ids_frame,
-            text="Hibridna",
-            variable=self.ids_choice,
-            value="hybrid",
-        ).pack(anchor="w")
 
 
         """ TRAJANJE SIMULACIJE """
@@ -170,7 +164,7 @@ class SimulatorGUI:
             command=self.start_detecting,
             state=tk.DISABLED
         )
-        self.start_button.pack(pady=(10,2))
+        self.start_button.pack(pady=(10,15))
 
         self.advanced_frame = tk.LabelFrame(
             self.root,
@@ -281,7 +275,7 @@ class SimulatorGUI:
             return 
 
         self.advanced_frame.pack_forget()
-        self.root.geometry("360x630")
+        self.root.geometry("360x610")
         self.start_button.config(state=tk.NORMAL)
         self.advanced_settings_button.config(state=tk.DISABLED)
         self.learn_button.config(state=tk.DISABLED)

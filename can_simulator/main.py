@@ -50,7 +50,7 @@ def generate_frames(duration: float) -> list[CANFrame]:
 
 def run_learning(window_size: int, tolerance: float, learning_duration: float):
     """Izvede učenje časovnega in entropijskega IDS."""
-    print(f"{'Začenjam učenje sistema:':37}{learning_duration:5}")
+    print(f"{'Začenjam učenje sistema:':37}{learning_duration:5} s")
     
 
     print()
@@ -100,7 +100,6 @@ def run_learning(window_size: int, tolerance: float, learning_duration: float):
     timing_ids.learning_ready.wait()
 
     learning_player.play(normal_frames_bus)
-
     timing_ids.stop_learning()
     learning_thread.join()
 
@@ -116,7 +115,6 @@ def run_learning(window_size: int, tolerance: float, learning_duration: float):
     entropy_ids.learning_ready.wait()
 
     learning_player.play(normal_frames_bus)
-
     entropy_ids.stop_learning()
     learning_thread.join()
 
@@ -268,15 +266,6 @@ def run_detecting(duration: float, attacks_choice: list, ids_choice: str) -> Non
         print("Entropijsko zaznavanje se izvaja...")
         entropy_alarms = run_entropy_ids()
         export_txt(entropy_alarms,"entropy_results.txt")
-
-    elif ids_choice == "hybrid":
-        print("Hibridno zaznavanje se izvaja...") 
-        timing_alarms = run_timing_ids()
-        entropy_alarms = run_entropy_ids()
-
-        hybrid_alarms = timing_alarms + entropy_alarms
-
-        export_txt(hybrid_alarms,"hybrid_results.txt")
 
 
 def main() -> None:
