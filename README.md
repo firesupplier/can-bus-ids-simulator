@@ -1,6 +1,6 @@
 ## CAN BUS IDS SIMULATOR
 
-Simulira omrežje CAN Bus, napade na omrežje ter delovanje časovnega in entropijskega IDS.Program je namenjen izvajanju v operacijskem sistemu Linux in uporablja SocketCAN z virtualnim CAN vmesnikom `vcan0`.
+Simulira omrežje CAN Bus, napade na omrežje ter delovanje časovnega in entropijskega IDS. Program je namenjen izvajanju v operacijskem sistemu Linux in uporablja SocketCAN z virtualnim CAN vmesnikom `vcan0`.
 
 ### Sistemske odvisnosti
 
